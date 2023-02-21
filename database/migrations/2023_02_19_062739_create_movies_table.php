@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('movies', function (Blueprint $table) {
             $table->id();
+
+            // Movie
+            $table->string("name", 50)->unique();
+            $table->year("year");
+            $table->bigInteger("cashOut")->unsigned(); 
+
             $table->timestamps();
         });
     }
