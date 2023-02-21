@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
 
             // Tag
-            $table->string("name", 30);
+            $table->string("name", 30)->unique();
             $table->string("description", 255);
 
             $table->timestamps();
