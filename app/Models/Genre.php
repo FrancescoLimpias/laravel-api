@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Genre extends Model
 {
     use HasFactory;
+    protected $guarded = ["id"];
+
+    /**
+     * Get all of the movies for the Genre
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function movies()
+    {
+        return $this->hasMany(Movie::class);
+    }
 }
