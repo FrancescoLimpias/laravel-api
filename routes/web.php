@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', 'home');
 
 // Indexing routes
-Route::get('home', [MovieController::class, "indexByGenre"]);
-Route::get('home/movie', [MovieController::class, "index"]);
+Route::get('home', [MovieController::class, "indexByGenre"])->name("home");
+Route::get('home/movie', [MovieController::class, "index"])->name("home.movie");
 
 // Controller routes
 Route::resource('movie', MovieController::class);
