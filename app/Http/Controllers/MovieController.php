@@ -21,7 +21,7 @@ class MovieController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexSortByColumn($column_name)
+    public function indexByGenre()
     {
         //
     }
