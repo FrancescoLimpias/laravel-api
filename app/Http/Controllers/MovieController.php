@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Genre;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -13,7 +14,7 @@ class MovieController extends Controller
      */
     public function index()
     {
-        //
+        // return view("pages.home");
     }
 
     /**
@@ -23,7 +24,8 @@ class MovieController extends Controller
      */
     public function indexByGenre()
     {
-        //
+        $genres = Genre::all();
+        return view("pages.home", compact('genres'));
     }
 
     /**
