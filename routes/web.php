@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Landing (redirect -> home)
+Route::redirect('/', 'home');
+
+// Indexing routes
+Route::get('home', [MovieController::class, "indexByGenre"]);
+Route::get('home/movie', [MovieController::class, "index"]);
+
+// Controller routes
+Route::resource('movie', MovieController::class);
